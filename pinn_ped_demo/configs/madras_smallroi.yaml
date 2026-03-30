@@ -1,0 +1,28 @@
+seed: 42
+device: cuda
+
+data:
+  raw_dir: data/raw
+  processed_npz: data/processed/madras_roi.npz
+  n_samples: 5000
+
+model:
+  hidden_dim: 128
+  depth: 6
+
+train:
+  batch_size: 1024
+  steps: 2000
+  lr: 0.001
+
+field:
+  lambda_data: 1.0
+  lambda_pde_start: 0.1
+  lambda_pde_end: 1.0
+  lambda_bc: 0.1
+
+traj:
+  lambda_data: 1.0
+  lambda_ode_start: 0.1
+  lambda_ode_end: 1.0
+  lambda_collision: 0.1
